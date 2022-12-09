@@ -26,7 +26,7 @@ class _object3D:public _basic_object3D
 
   void draw_line();
   void draw_fill();
-  void draw_chess() ;
+  void draw_chess();
 
 };
 
