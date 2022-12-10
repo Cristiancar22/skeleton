@@ -14,7 +14,7 @@
 class _objetoPly:public _object3D
 {
 public:
-    _objetoPly(string archivo = "C:/Users/ablin/OneDrive/Escritorio/Universidad/3/Informatica grafica/Practicas/skeleton/ply_models/ply_models/beethoven.ply");
+    _objetoPly(string archivo = "C:/Users/ablin/Desktop/Universidad/IG/Practicas/ply_models/happy.ply");
 
   int numVertices, numTriangulos;
 

@@ -14,6 +14,7 @@ class _revolucion:public _object3D
     int numSecciones;
 
     void triangulosMal();
+    void triangulosBien();
 }
 ;
 #endif // REVOLUCION_H
