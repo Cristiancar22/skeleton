@@ -6,7 +6,7 @@ _cylinder::_cylinder(float radio){
     curvaGeneratriz[0] = _vertex3f(0.0, 0.0, 0.0);
     curvaGeneratriz[1] = _vertex3f(radio, 0.0, 0.0);
     curvaGeneratriz[2] = _vertex3f(radio, 2.0*radio, 0.0);
-    curvaGeneratriz[4] = _vertex3f(0.0, 2.0*radio, 0.0);
-    revolucionar(curvaGeneratriz, 400);
-    triangulosMal();
+    curvaGeneratriz[3] = _vertex3f(0.0, 2.0*radio, 0.0);
+    revolucionar(curvaGeneratriz, 100);
+    triangulosBien();
 }
