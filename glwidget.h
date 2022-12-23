@@ -23,6 +23,7 @@
 #include "objetoPly.h"
 #include "cylinder.h"
 #include "sphere.h"
+#include "hierarchicalObject.h"
 
 
 namespace _gl_widget_ne {
@@ -37,7 +38,7 @@ namespace _gl_widget_ne {
   const float ANGLE_STEP=1;
 
   typedef enum {MODE_DRAW_POINT,MODE_DRAW_LINE,MODE_DRAW_FILL,MODE_DRAW_CHESS} _mode_draw;
-  typedef enum {OBJECT_TETRAHEDRON,OBJECT_CUBE, OBJECT_CONE, OBJECT_CYLINDER,OBJECT_SPHERE, OBJECT_PLY} _object;
+  typedef enum {OBJECT_TETRAHEDRON,OBJECT_CUBE, OBJECT_CONE, OBJECT_CYLINDER,OBJECT_SPHERE, OBJECT_PLY, OBJECT_HIERARCHICAL} _object;
 }
 
 class _window;
@@ -80,6 +81,7 @@ private:
   _cylinder Cylinder;
   _sphere Sphere;
   _objetoPly objetoPly;
+  _robot Robot;
 
   _gl_widget_ne::_object Object;
 
