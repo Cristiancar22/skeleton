@@ -2,6 +2,7 @@
 #define REVOLUCION_H
 
 #include "object3d.h"
+#include "texture.h"
 
 class _revolucion:public _object3D
 {
@@ -15,6 +16,8 @@ class _revolucion:public _object3D
 
     void triangulosMal();
     void triangulosBien();
+
+    void draw_texturas();
 }
 ;
 #endif // REVOLUCION_H

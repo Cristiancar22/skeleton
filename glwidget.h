@@ -10,7 +10,9 @@
 #ifndef GLWIDGET_H
 #define GLWIDGET_H
 
-#include <GL/gl.h>
+#include <GL/glew.h>
+#include <GL/freeglut.h>
+
 #include <QOpenGLWidget>
 #include <QKeyEvent>
 #include <iostream>
@@ -24,6 +26,8 @@
 #include "cylinder.h"
 #include "sphere.h"
 #include "hierarchicalObject.h"
+#include "luz.h"
+#include "chess_board.h"
 
 
 namespace _gl_widget_ne {
@@ -38,7 +42,7 @@ namespace _gl_widget_ne {
   const float ANGLE_STEP=1;
 
   typedef enum {MODE_DRAW_POINT,MODE_DRAW_LINE,MODE_DRAW_FILL,MODE_DRAW_CHESS} _mode_draw;
-  typedef enum {OBJECT_TETRAHEDRON,OBJECT_CUBE, OBJECT_CONE, OBJECT_CYLINDER,OBJECT_SPHERE, OBJECT_PLY, OBJECT_HIERARCHICAL} _object;
+  typedef enum {OBJECT_TETRAHEDRON,OBJECT_CUBE, OBJECT_CONE, OBJECT_CYLINDER,OBJECT_SPHERE, OBJECT_PLY, OBJECT_HIERARCHICAL, OBJECT_CHESSBOARD} _object;
 }
 
 class _window;
@@ -82,17 +86,27 @@ private:
   _sphere Sphere;
   _objetoPly objetoPly;
   _robot Robot;
-
+  _chess_board ChessBoard;
+  _luz Luz1 = _luz(GL_LIGHT0, _vertex4f(0,1,0,0), _vertex4f(0.0,0.0,0.0,1),
+         _vertex4f(1.0,1.0,1.0,1), _vertex4f(1.0,1.0,1.0,1));
+  _luz Luz2 = _luz(GL_LIGHT1, _vertex4f(0,0,20,1), _vertex4f(0.1,0.0,0.0,1),
+         _vertex4f(1.0,0.4,0.4,1), _vertex4f(1.0,1.4,0.4,1));
+  int mat = 0;
+  bool animacion = false;
   _gl_widget_ne::_object Object;
 
   bool Draw_point;
   bool Draw_line;
   bool Draw_fill;
   bool Draw_chess;
+  bool Draw_flat_light;
+  bool Draw_smooth_light;
+  bool texturas;
 
   float Observer_angle_x;
   float Observer_angle_y;
   float Observer_distance;
+  void pick();
 };
 
 #endif

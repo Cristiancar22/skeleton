@@ -66,8 +66,8 @@ void _revolucion::triangulosBien(){
     }
 
     for(int i = 0; i < numVertices - 3; i++){
-        Triangles[contador++] = _vertex3ui(numVerticesTotal- (numVertices-2)+i, i+2,numVerticesTotal- (numVertices-2)+i+1);
-        Triangles[contador++] = _vertex3ui(numVerticesTotal- (numVertices-2)+i, i + 1,i + 2);
+        Triangles[contador++] = _vertex3ui(numVerticesTotal- (numVertices-1)+i, i + 2, numVerticesTotal - (numVertices-1) + i + 1);
+        Triangles[contador++] = _vertex3ui(numVerticesTotal- (numVertices-1)+i, i + 1,i + 2);
     }
 
     //Triangulos inferiores
@@ -77,6 +77,30 @@ void _revolucion::triangulosBien(){
         if(y >= numVerticesTotal - 1) y = numVertices-2;
         Triangles[contador++] = _vertex3ui(x, y, (numVerticesTotal - 1));
     }
+
+}
+
+void _revolucion::draw_texturas()
+{
+    _texture textura(1, "C:/Users/ablin/Desktop/Universidad/IG/Practicas/skeleton/texturas/teta");
+
+    glBegin(GL_QUADS);
+    /*
+    glTexCoord2f(0.0,0.0);
+    glVertex3f(Vertices[(columnas+1)*(filas)]._0,Vertices[(columnas+1)*(filas)]._1,0.0);
+
+    glTexCoord2f(1.0,0.0);
+    glVertex3f(Vertices[(columnas+1)*(filas+1)-1]._0,Vertices[(columnas+1)*(filas+1)-1]._1,0.0);
+
+    glTexCoord2f(1.0,1.0);
+    glVertex3f(Vertices[filas]._0,Vertices[filas]._1,0.0);
+
+    glTexCoord2f(0.0,1.0);
+    glVertex3f(Vertices[0]._0,Vertices[0]._1,0.0);
+*/
+
+    glEnd();
+
 
 }
 

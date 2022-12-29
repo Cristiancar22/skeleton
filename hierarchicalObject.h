@@ -15,20 +15,26 @@ public:
     void draw_fill();
     void draw_chess();
     void draw_point();
+    void iluminacion_flat(int mat);
+    void iluminacion_smooth(int mat);
 };
 
 class _brazos:public _object3D
 {
 public:
     _brazos(){};
-
     _cube brazo;
 
+    bool animacion = false;
+    float gradGiro = 0.0;
+    float varGiro = 5.0;
 
     void draw_line();
     void draw_fill();
     void draw_chess();
     void draw_point();
+    void iluminacion_flat(int mat);
+    void iluminacion_smooth(int mat);
 
 void dibujar();
 };
@@ -39,10 +45,17 @@ public:
     _ruedas(){};
     _cylinder rueda;
 
+    bool animacion = false;
+    float gradGiro = 0.0;
+    float varGiro = 0.1;
+
+
     void draw_line();
     void draw_fill();
     void draw_chess();
     void draw_point();
+    void iluminacion_flat(int mat);
+    void iluminacion_smooth(int mat);
 };
 
 class _cabeza:public _object3D
@@ -50,10 +63,17 @@ class _cabeza:public _object3D
 public:
     _cabeza(){};
     _sphere cabeza;
+
+    bool animacion = false;
+    float gradGiro = 0.0;
+    float varGiro = 0.5;
+
     void draw_line();
     void draw_fill();
     void draw_chess();
     void draw_point();
+    void iluminacion_flat(int mat);
+    void iluminacion_smooth(int mat);
 };
 
 class _robot:public _object3D
@@ -68,6 +88,8 @@ public:
     void draw_fill();
     void draw_chess();
     void draw_point();
+    void iluminacion_flat(int mat);
+    void iluminacion_smooth(int mat);
 };
 
 #endif // HIERARCHICALOBJECT_H
